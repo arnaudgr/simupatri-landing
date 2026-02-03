@@ -65,12 +65,12 @@ const problems = [
   {
     icon: (
       <svg className="w-8 h-8 text-accent-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
       </svg>
     ),
-    title: "Des vendeurs, pas des conseillers",
+    title: "Vous voulez du rendement, pas un second metier",
     description:
-      "Banquiers, agents immobiliers, CGP en conflit d'interets... Chacun pousse son produit sans vous montrer les alternatives.",
+      "Gestion locative, travaux, impayés, vacance... L'immobilier classique demande un temps et une énergie que vous n'avez pas forcement.",
   },
   {
     icon: (
@@ -78,37 +78,37 @@ const problems = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
       </svg>
     ),
-    title: "Trop de variables, zero visibilite",
+    title: "SCPI ou cle en main : impossible de comparer",
     description:
-      "TMI, prelevement sociaux, amortissement, plus-value... Impossible de comparer LMNP, SCPI et location nue sur un pied d'egalite.",
+      "SCPI europeennes sans prelevements sociaux ou immobilier delegue type Ouiker ? Personne ne vous montre la comparaison nette d'impots.",
   },
   {
     icon: (
       <svg className="w-8 h-8 text-accent-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25v-.008Zm2.498-6.75h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007v-.008Zm2.504-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008v-.008Zm2.498-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008v-.008ZM8.25 6h7.5v2.25h-7.5V6ZM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0 0 12 2.25Z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18v-.008Zm-12 0h.008v.008H6v-.008Z" />
       </svg>
     ),
-    title: "Des tableurs incomprehensibles",
+    title: "Les chiffres qu'on vous donne sont faux",
     description:
-      "Les rares outils existants sont soit trop simplistes (sans fiscalite reelle), soit des usines a gaz reservees aux experts.",
+      "Rendements bruts, fiscalite ignoree, prelevements sociaux oublies... Les estimations classiques surestiment votre gain reel de 30 a 40%.",
   },
 ];
 
 const steps = [
   {
     number: "1",
-    title: "Decrivez votre situation",
-    description: "Revenus, situation familiale, tranche marginale d'imposition... En quelques clics.",
+    title: "Decrivez votre profil fiscal",
+    description: "TMI, quotient familial, revenus fonciers existants... On part de votre situation reelle.",
   },
   {
     number: "2",
-    title: "Configurez vos scenarios",
-    description: "LMNP reel, LMNP micro-BIC, SCPI, location nue... Comparez ce que vous voulez.",
+    title: "Comparez vos options",
+    description: "SCPI europeennes, SCPI francaises, immobilier cle en main delegue... Cote a cote, sans biais.",
   },
   {
     number: "3",
-    title: "Obtenez les vrais chiffres",
-    description: "Rendement net apres impots, cash-flow mensuel, TRI sur 20 ans. Sans angle mort.",
+    title: "Obtenez le vrai rendement net",
+    description: "Apres IR, prelevements sociaux, frais de gestion. Le chiffre qui compte vraiment pour decider.",
   },
 ];
 
@@ -116,34 +116,34 @@ const advantages = [
   {
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+      </svg>
+    ),
+    text: "SCPI europeennes : 0% de prelevements sociaux (vs 17.2%)",
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25v-.008Zm2.498-6.75h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007v-.008Zm2.504-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008v-.008Zm2.498-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008v-.008ZM8.25 6h7.5v2.25h-7.5V6ZM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0 0 12 2.25Z" />
+      </svg>
+    ),
+    text: "Fiscalite reelle : TMI, quotient familial, PS au centime pres",
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
       </svg>
     ),
-    text: "Calculs fiscaux reels (IR, PS, CSG...)",
+    text: "100% neutre : on ne vend ni SCPI ni immobilier",
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
       </svg>
     ),
-    text: "Comparaison multi-scenarios cote a cote",
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-      </svg>
-    ),
-    text: "100% independant, aucun produit a vendre",
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 21 5.995 9.532 10.5 6.75l1.5 3 1.5-3 4.505 2.782L13.5 21h-3Z" />
-      </svg>
-    ),
-    text: "Interface claire, pensee pour les non-experts",
+    text: "Concu pour ceux qui veulent investir sans gerer",
   },
 ];
 
@@ -172,12 +172,12 @@ export default function Home() {
             Beta a venir
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 text-white">
-            Investissement immobilier&nbsp;:
+            Investir dans l&apos;immobilier sans les galeres&nbsp;:
             <br />
-            <span className="text-accent-green">comparez enfin</span> sans biais
+            <span className="text-accent-green">SCPI ou cle en main&nbsp;?</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            LMNP, SCPI, location nue... Simupatri calcule votre rendement net reel apres impots, avec la vraie fiscalite francaise. Aucun produit a vendre, juste les chiffres.
+            Le premier comparateur qui calcule votre vrai rendement net, avec la fiscalite francaise complete.
           </p>
           <div className="flex justify-center">
             <EmailForm id="hero-form" variant="dark" />
@@ -193,10 +193,10 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">
-              Le probleme avec l&apos;investissement immo aujourd&apos;hui
+              Pourquoi c&apos;est si dur de choisir
             </h2>
             <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-              Vous cherchez a investir, mais personne ne vous donne une comparaison objective.
+              Vous voulez faire travailler votre argent dans l&apos;immobilier, sans que ca devienne un travail a plein temps.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -219,10 +219,12 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">
-              Simupatri : votre <span className="text-accent-green">tiers de confiance</span>
+              SCPI europeennes ou immobilier delegue&nbsp;:
+              <br />
+              <span className="text-accent-green">decouvrez ce qui rapporte vraiment</span>
             </h2>
             <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-              Un outil independant qui fait les calculs que votre banquier ne fera jamais pour vous.
+              Simupatri compare vos options d&apos;investissement passif avec la vraie fiscalite. Pas d&apos;estimation, pas de produit a vendre.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -264,10 +266,10 @@ export default function Home() {
       <section id="cta" className="py-24 px-6 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">
-            Pret a investir en toute clarte ?
+            Pret a savoir ce qui rapporte vraiment&nbsp;?
           </h2>
           <p className="text-slate-500 text-lg mb-10">
-            Inscrivez-vous pour etre parmi les premiers a tester Simupatri des son lancement.
+            Inscrivez-vous pour acceder en avant-premiere au comparateur et faire vos propres simulations.
           </p>
           <div className="flex justify-center">
             <EmailForm id="cta-form" variant="light" />
