@@ -4,7 +4,7 @@ import { useState, FormEvent } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
-function EmailForm({ id }: { id?: string }) {
+function EmailForm({ id, variant = "light" }: { id?: string; variant?: "light" | "dark" }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -32,6 +32,11 @@ function EmailForm({ id }: { id?: string }) {
     );
   }
 
+  const inputClass =
+    variant === "dark"
+      ? "flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-accent-green focus:border-transparent text-base"
+      : "flex-1 px-4 py-3 rounded-lg bg-white border border-slate-300 text-primary placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent text-base shadow-sm";
+
   return (
     <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full max-w-md" id={id}>
       <input
@@ -40,17 +45,17 @@ function EmailForm({ id }: { id?: string }) {
         placeholder="votre@email.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-navy-300 focus:outline-none focus:ring-2 focus:ring-accent-green focus:border-transparent text-base"
+        className={inputClass}
       />
       <button
         type="submit"
         disabled={status === "loading"}
-        className="px-6 py-3 bg-accent-green hover:bg-accent-green-dark text-white font-semibold rounded-lg transition-colors disabled:opacity-50 cursor-pointer whitespace-nowrap"
+        className="px-6 py-3 bg-accent-green hover:bg-accent-green-dark text-white font-semibold rounded-lg transition-colors disabled:opacity-50 cursor-pointer whitespace-nowrap shadow-md"
       >
         {status === "loading" ? "..." : "Rejoindre la beta"}
       </button>
       {status === "error" && (
-        <p className="text-red-400 text-sm sm:col-span-2">Une erreur est survenue. Reessayez.</p>
+        <p className="text-red-500 text-sm sm:col-span-2">Une erreur est survenue. Reessayez.</p>
       )}
     </form>
   );
@@ -144,16 +149,16 @@ const advantages = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-navy-950 text-white">
+    <main className="min-h-screen bg-white text-slate-700">
       {/* Nav */}
-      <nav className="fixed top-0 w-full bg-navy-950/80 backdrop-blur-md z-50 border-b border-white/5">
+      <nav className="fixed top-0 w-full bg-primary/95 backdrop-blur-md z-50 shadow-md">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <span className="text-2xl font-bold tracking-tight">
+          <span className="text-2xl font-bold tracking-tight text-white">
             Simu<span className="text-accent-green">patri</span>
           </span>
           <a
             href="#cta"
-            className="hidden sm:inline-block px-5 py-2 bg-accent-green hover:bg-accent-green-dark text-white text-sm font-semibold rounded-lg transition-colors"
+            className="hidden sm:inline-block px-5 py-2 bg-accent-green hover:bg-accent-green-dark text-white text-sm font-semibold rounded-lg transition-colors shadow-md"
           >
             Rejoindre la beta
           </a>
@@ -161,37 +166,36 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-accent-green/5 to-transparent pointer-events-none" />
+      <section className="relative pt-32 pb-20 px-6 bg-gradient-to-b from-primary via-primary-light to-slate-50">
         <div className="max-w-3xl mx-auto text-center relative">
-          <div className="inline-block mb-6 px-4 py-1.5 rounded-full bg-accent-green/10 border border-accent-green/20 text-accent-green text-sm font-medium">
+          <div className="inline-block mb-6 px-4 py-1.5 rounded-full bg-white/15 border border-white/25 text-white text-sm font-medium">
             Beta a venir
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 text-white">
             Investissement immobilier&nbsp;:
             <br />
             <span className="text-accent-green">comparez enfin</span> sans biais
           </h1>
-          <p className="text-lg sm:text-xl text-navy-300 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
             LMNP, SCPI, location nue... Simupatri calcule votre rendement net reel apres impots, avec la vraie fiscalite francaise. Aucun produit a vendre, juste les chiffres.
           </p>
           <div className="flex justify-center">
-            <EmailForm id="hero-form" />
+            <EmailForm id="hero-form" variant="dark" />
           </div>
-          <p className="mt-4 text-sm text-navy-500">
+          <p className="mt-4 text-sm text-white/50">
             Gratuit. Pas de spam. Desinscription en un clic.
           </p>
         </div>
       </section>
 
       {/* Problem */}
-      <section className="py-20 px-6 bg-navy-900/50">
+      <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">
               Le probleme avec l&apos;investissement immo aujourd&apos;hui
             </h2>
-            <p className="text-navy-400 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto">
               Vous cherchez a investir, mais personne ne vous donne une comparaison objective.
             </p>
           </div>
@@ -199,11 +203,11 @@ export default function Home() {
             {problems.map((p, i) => (
               <div
                 key={i}
-                className="bg-navy-900 border border-white/5 rounded-2xl p-8 hover:border-accent-orange/30 transition-colors"
+                className="bg-white border border-secondary-light/40 rounded-2xl p-8 hover:border-secondary transition-colors shadow-sm hover:shadow-md"
               >
                 <div className="mb-4">{p.icon}</div>
-                <h3 className="text-xl font-semibold mb-3">{p.title}</h3>
-                <p className="text-navy-400 leading-relaxed">{p.description}</p>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{p.title}</h3>
+                <p className="text-slate-500 leading-relaxed">{p.description}</p>
               </div>
             ))}
           </div>
@@ -211,13 +215,13 @@ export default function Home() {
       </section>
 
       {/* Solution */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">
               Simupatri : votre <span className="text-accent-green">tiers de confiance</span>
             </h2>
-            <p className="text-navy-400 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto">
               Un outil independant qui fait les calculs que votre banquier ne fera jamais pour vous.
             </p>
           </div>
@@ -225,10 +229,10 @@ export default function Home() {
             {advantages.map((a, i) => (
               <div
                 key={i}
-                className="flex items-start gap-4 bg-navy-900/60 border border-white/5 rounded-xl p-6"
+                className="flex items-start gap-4 bg-white border border-secondary-light/40 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="text-accent-green shrink-0 mt-0.5">{a.icon}</div>
-                <p className="text-navy-200 font-medium">{a.text}</p>
+                <div className="text-secondary shrink-0 mt-0.5">{a.icon}</div>
+                <p className="text-slate-600 font-medium">{a.text}</p>
               </div>
             ))}
           </div>
@@ -236,20 +240,20 @@ export default function Home() {
       </section>
 
       {/* How it works */}
-      <section className="py-20 px-6 bg-navy-900/50">
+      <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Comment ca marche</h2>
-            <p className="text-navy-400 text-lg">Trois etapes. Pas de jargon. Des resultats clairs.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">Comment ca marche</h2>
+            <p className="text-slate-500 text-lg">Trois etapes. Pas de jargon. Des resultats clairs.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {steps.map((s) => (
               <div key={s.number} className="text-center">
-                <div className="w-14 h-14 bg-accent-green/10 border border-accent-green/20 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                  <span className="text-accent-green text-2xl font-bold">{s.number}</span>
+                <div className="w-14 h-14 bg-secondary/10 border border-secondary/25 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                  <span className="text-secondary text-2xl font-bold">{s.number}</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{s.title}</h3>
-                <p className="text-navy-400 leading-relaxed">{s.description}</p>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{s.title}</h3>
+                <p className="text-slate-500 leading-relaxed">{s.description}</p>
               </div>
             ))}
           </div>
@@ -257,26 +261,26 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section id="cta" className="py-24 px-6">
+      <section id="cta" className="py-24 px-6 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">
             Pret a investir en toute clarte ?
           </h2>
-          <p className="text-navy-400 text-lg mb-10">
+          <p className="text-slate-500 text-lg mb-10">
             Inscrivez-vous pour etre parmi les premiers a tester Simupatri des son lancement.
           </p>
           <div className="flex justify-center">
-            <EmailForm id="cta-form" />
+            <EmailForm id="cta-form" variant="light" />
           </div>
-          <p className="mt-4 text-sm text-navy-500">
+          <p className="mt-4 text-sm text-slate-400">
             Gratuit. Pas de spam. Desinscription en un clic.
           </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 py-8 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-navy-500">
+      <footer className="border-t border-slate-200 py-8 px-6 bg-primary">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
           <span>
             &copy; {new Date().getFullYear()} Simupatri. Tous droits reserves.
           </span>
